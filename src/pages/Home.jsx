@@ -1,6 +1,5 @@
 import { Button, Card, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import heroImg from '../assets/hero2.jpg'
 import './Home.css'
 
 const services = [
@@ -32,15 +31,15 @@ function Home() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="home-navbar" />
           <Navbar.Collapse id="home-navbar">
-            <Nav className="mx-auto gap-lg-4">
+            <Nav className="ms-lg-auto me-lg-3 gap-lg-4">
               <Nav.Link href="#home" active>
                 Home
               </Nav.Link>
-              <Nav.Link href="#services">Services</Nav.Link>
-              <Nav.Link href="#gallery">Gallery</Nav.Link>
-              <Nav.Link href="#visit">Visit Us</Nav.Link>
+              <Nav.Link as={Link} to="/services">Services</Nav.Link>
+              <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
+              <Nav.Link as={Link} to="/visit">Visit Us</Nav.Link>
             </Nav>
-            <Button as={Link} to="/booking" className="btn-book">
+            <Button as={Link} to="/services" className="btn-book">
               Book Now
             </Button>
           </Navbar.Collapse>
@@ -59,17 +58,19 @@ function Home() {
                   reliable timing, and a clean studio experience.
                 </p>
                 <div className="hero-actions">
-                  <Button href="#services" className="btn-book btn-lg">
+                  <Button as={Link} to="/services" className="btn-book btn-lg">
                     Choose a Service
                   </Button>
-                  <Button href="#visit" variant="outline-primary" className="btn-lg">
+                  <Button as={Link} to="/visit" variant="outline-primary" className="btn-lg">
                     Location
                   </Button>
                 </div>
               </Col>
               <Col lg={6}>
                 <div className="hero-image-wrap">
-                  <img src={heroImg} alt="FreshFade Studio barber chair" className="hero-image" />
+                  <div className="hero-image" role="img" aria-label="FreshFade Studio barber chair">
+                    Barbershop Image
+                  </div>
                 </div>
               </Col>
             </Row>
@@ -118,14 +119,19 @@ function Home() {
             <Row className="g-4">
               {['Classic taper', 'Low fade', 'Kids cut'].map((title) => (
                 <Col md={4} key={title}>
-                  <div className="gallery-card">
+                  <Link to="/gallery" className="gallery-card-link">
+                    <div className="gallery-card">
                     <div className="gallery-placeholder" />
                     <h3>{title}</h3>
                     <p>FreshFade finish</p>
-                  </div>
+                    </div>
+                  </Link>
                 </Col>
               ))}
             </Row>
+            <Button as={Link} to="/gallery" className="btn-book mt-4">
+              View Gallery
+            </Button>
           </Container>
         </section>
 

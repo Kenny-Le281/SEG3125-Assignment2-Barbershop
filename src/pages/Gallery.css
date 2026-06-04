@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --fresh-navy: #0f2744;
+  --fresh-blue: #2f75b5;
+  --fresh-blue-dark: #245d91;
+  --fresh-muted: #6d7b8c;
+  --fresh-line: #dbe4ee;
+  --fresh-soft: #f6f9fc;
+  --fresh-white: #ffffff;
+}
+
+.haircut-gallery-page {
+  background:
+    radial-gradient(circle at 14% 14%, rgba(47, 117, 181, 0.08), transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #f6f9fc 100%);
+  color: var(--fresh-muted);
+  font-family: 'Inter', sans-serif;
+  min-height: calc(100vh - 65px);
+  padding: 64px 0 80px;
+  text-align: center;
+}
+
+.gallery-heading {
+  margin: 0 auto 24px;
+  max-width: 720px;
+}
+
+.gallery-heading h1 {
+  color: var(--fresh-navy);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 10px;
+}
+
+.gallery-heading p:last-child {
+  color: var(--fresh-muted);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.gallery-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin: 0 auto 34px;
+}
+
+.gallery-filter {
+  border-radius: 999px;
+  min-width: 126px;
+}
+
+.haircut-card {
+  background: var(--fresh-white);
+  border: 1px solid var(--fresh-line);
+  border-radius: 8px;
+  box-shadow: 0 16px 34px rgba(15, 39, 68, 0.08);
+  height: 100%;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.haircut-card:hover {
+  box-shadow: 0 20px 44px rgba(15, 39, 68, 0.12);
+  transform: translateY(-4px);
+}
+
+.haircut-visual {
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, rgba(47, 117, 181, 0.18), rgba(255, 255, 255, 0.2)),
+    linear-gradient(180deg, #eef4fa 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--fresh-line);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.haircut-visual::before,
+.haircut-visual::after {
+  background: rgba(47, 117, 181, 0.12);
+  border-radius: 999px;
+  content: '';
+  position: absolute;
+}
+
+.haircut-visual::before {
+  height: 130px;
+  right: -30px;
+  top: 24px;
+  width: 130px;
+}
+
+.haircut-visual::after {
+  bottom: -42px;
+  height: 120px;
+  left: 24px;
+  width: 120px;
+}
+
+.head-shape {
+  background: #f0c9ad;
+  border: 4px solid rgba(15, 39, 68, 0.1);
+  border-radius: 44% 44% 48% 48%;
+  display: block;
+  height: 142px;
+  position: relative;
+  width: 112px;
+  z-index: 1;
+}
+
+.head-shape::after {
+  background: #d4a386;
+  border-radius: 0 0 999px 999px;
+  bottom: -34px;
+  content: '';
+  height: 44px;
+  left: 28px;
+  position: absolute;
+  width: 56px;
+}
+
+.hair-shape {
+  background: var(--fresh-navy);
+  border-radius: 46px 46px 18px 18px;
+  height: 54px;
+  margin-top: -112px;
+  position: absolute;
+  width: 116px;
+  z-index: 2;
+}
+
+.fade-line {
+  background: rgba(47, 117, 181, 0.8);
+  border-radius: 999px;
+  height: 4px;
+  position: absolute;
+  transform: translateY(8px);
+  width: 88px;
+  z-index: 3;
+}
+
+.haircut-textured .hair-shape {
+  border-radius: 28px 52px 18px 22px;
+  height: 62px;
+  transform: rotate(-4deg);
+}
+
+.haircut-low-fade .hair-shape {
+  height: 46px;
+}
+
+.haircut-low-fade .fade-line {
+  transform: translateY(28px);
+}
+
+.haircut-mid-fade .hair-shape {
+  height: 50px;
+}
+
+.haircut-mid-fade .fade-line {
+  transform: translateY(8px) rotate(-5deg);
+}
+
+.haircut-kids .head-shape {
+  height: 126px;
+  width: 102px;
+}
+
+.haircut-kids .hair-shape {
+  height: 48px;
+  width: 104px;
+}
+
+.haircut-lineup .hair-shape {
+  border-radius: 18px 18px 10px 10px;
+  height: 48px;
+}
+
+.haircut-lineup .fade-line {
+  height: 5px;
+  transform: translateY(-8px);
+  width: 104px;
+}
+
+.haircut-card-body {
+  padding: 22px;
+}
+
+.haircut-card h2 {
+  color: var(--fresh-navy);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0;
+  margin: 0 0 8px;
+}
+
+.haircut-card p {
+  color: var(--fresh-muted);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+@media (max-width: 991px) {
+  .haircut-gallery-page {
+    padding: 48px 0 60px;
+  }
+}

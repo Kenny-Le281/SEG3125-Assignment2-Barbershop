@@ -1,25 +1,21 @@
 import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
+import Services from './pages/Services'
+import Gallery from './pages/Gallery'
+import Visit from './pages/Visit'
 import Booking from './pages/Booking'
-
-import BikeRepair from './page-holders/BikeRepair'
-import MemoryGame from './page-holders/MemoryGame'
-import EcommerceStore from './page-holders/EcommerceStore'
-import AnalyticsDashboard from './page-holders/AnalyticsDashboard'
+import Confirmation from './pages/Confirmation'
 
 function App() {
   return (
     <Routes>
       {/* Home page */}
       <Route path="/" element={<Home />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/gallery" element={<Gallery />} />
+      <Route path="/visit" element={<Visit />} />
       <Route path="/booking" element={<Booking />} />
-
-      {/* Project placeholder pages */}
-      <Route path="/bike-repair" element={<BikeRepair />} />
-      <Route path="/memory-game" element={<MemoryGame />} />
-      <Route path="/ecommerce" element={<EcommerceStore />} />
-      <Route path="/analytics" element={<AnalyticsDashboard />} />
-
+      <Route path="/confirmation" element={<Confirmation />} />
     </Routes>
   )
 }
