@@ -61,7 +61,7 @@ function Home() {
               </Nav.Link>
               <Nav.Link as={Link} to="/services">Services</Nav.Link>
               <Nav.Link as={Link} to="/gallery">Gallery</Nav.Link>
-              <Nav.Link as={Link} to="/visit">Visit Us</Nav.Link>
+              <Nav.Link as={Link} to="/visit">Location</Nav.Link>
             </Nav>
             <Button as={Link} to="/services" className="btn-book">
               Book Now
