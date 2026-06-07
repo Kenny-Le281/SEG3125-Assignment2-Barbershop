@@ -2,6 +2,14 @@ import { useState } from 'react'
 import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Gallery.css'
+import logo from '../assets/logo.png'
+import classicCrop from '../assets/classicCrop.jpg'
+import texturedFringe from '../assets/texturedFringe.jpg'
+import lowFade from '../assets/lowFade.jpg'
+import midFade from '../assets/midFade.jpg'
+import midTaper from '../assets/midTaper.jpg'
+import kidsCut from '../assets/kidsCut.jpg'
+import lineup from '../assets/lineup.jpg'
 
 const filters = ['Haircuts', 'Fades', 'Kids Cuts', 'Lineups']
 
@@ -10,37 +18,43 @@ const haircuts = [
     title: 'Classic Crop',
     category: 'Haircuts',
     description: 'Clean everyday shape with tidy edges.',
-    style: 'crop',
+    image: classicCrop,
   },
   {
-    title: 'Textured Top',
+    title: 'Textured Fringe',
     category: 'Haircuts',
     description: 'Natural movement with a styled finish.',
-    style: 'textured',
+    image: texturedFringe,
   },
   {
     title: 'Low Fade',
     category: 'Fades',
     description: 'Soft fade kept low around the sides.',
-    style: 'low-fade',
+    image: lowFade,
   },
   {
     title: 'Mid Fade',
     category: 'Fades',
     description: 'Balanced fade with a sharper profile.',
-    style: 'mid-fade',
+    image: midFade,
+  },
+  {
+    title: 'Mid Taper',
+    category: 'Fades',
+    description: 'A smooth taper with a clean transition around the sides.',
+    image: midTaper,
   },
   {
     title: 'Kids Trim',
     category: 'Kids Cuts',
     description: 'Simple, comfortable, and easy to maintain.',
-    style: 'kids',
+    image: kidsCut,
   },
   {
-    title: 'Sharp Lineup',
+    title: 'Lineup',
     category: 'Lineups',
     description: 'Crisp edges around the hairline and beard.',
-    style: 'lineup',
+    image: lineup,
   },
 ]
 
@@ -52,8 +66,8 @@ function Gallery() {
     <>
       <Navbar expand="lg" className="site-navbar gallery-navbar">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="brand-mark">
-            <span className="brand-icon">FF</span>
+          <Navbar.Brand href="/" className="brand-mark">
+            <img src={logo} alt="FreshFade Studio" className="brand-icon" />
             <span>FreshFade Studio</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="gallery-navbar" />
@@ -67,9 +81,6 @@ function Gallery() {
               </Nav.Link>
               <Nav.Link as={Link} to="/gallery" active>
                 Gallery
-              </Nav.Link>
-              <Nav.Link as={Link} to="/booking">
-                Book
               </Nav.Link>
               <Nav.Link as={Link} to="/visit">
                 Location
@@ -108,11 +119,7 @@ function Gallery() {
             {visibleHaircuts.map((haircut) => (
               <Col md={6} lg={4} key={haircut.title}>
                 <article className="haircut-card">
-                  <div className={`haircut-visual haircut-${haircut.style}`} aria-hidden="true">
-                    <span className="head-shape" />
-                    <span className="hair-shape" />
-                    <span className="fade-line" />
-                  </div>
+                  <img src={haircut.image} alt={haircut.title} className="haircut-image" />
                   <div className="haircut-card-body">
                     <h2>{haircut.title}</h2>
                     <p>{haircut.description}</p>

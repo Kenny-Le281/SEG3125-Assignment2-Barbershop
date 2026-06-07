@@ -1,79 +1,68 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { Link, useSearchParams } from 'react-router-dom'
 import './Confirmation.css'
+import logo from '../assets/logo.png'
 
 const confirmationFields = [
   {
     key: 'service',
     label: 'Service',
     fallback: 'Signature Cut',
-    symbol: 'S',
   },
   {
     key: 'date',
     label: 'Date',
     fallback: 'Fri',
-    symbol: 'D',
   },
   {
     key: 'time',
     label: 'Time',
     fallback: '9:00 AM',
-    symbol: 'T',
   },
   {
     key: 'barber',
     label: 'Barber',
     fallback: 'Any Barber',
-    symbol: 'B',
   },
   {
     key: 'price',
     label: 'Price',
     fallback: '$35',
-    symbol: '$',
   },
   {
     key: 'location',
     label: 'Location',
     fallback: '123 Barber Street, Ottawa, ON',
-    symbol: 'L',
   },
   {
     key: 'firstName',
     label: 'First Name',
     fallback: 'Not provided',
-    symbol: 'F',
   },
   {
     key: 'lastName',
     label: 'Last Name',
     fallback: 'Not provided',
-    symbol: 'N',
   },
   {
     key: 'email',
     label: 'Email',
     fallback: 'Not provided',
-    symbol: '@',
   },
   {
     key: 'phone',
     label: 'Phone',
     fallback: 'Not provided',
-    symbol: 'P',
   },
   {
     key: 'address',
     label: 'Address',
     fallback: 'Not provided',
-    symbol: 'A',
   },
   {
     key: 'postalCode',
     label: 'Postal Code',
     fallback: 'Not provided',
-    symbol: 'PC',
   },
 ]
 
@@ -85,7 +74,7 @@ function Confirmation() {
       <Navbar expand="lg" className="site-navbar confirmation-navbar">
         <Container>
           <Navbar.Brand as={Link} to="/" className="brand-mark">
-            <span className="brand-icon">FF</span>
+            <img src={logo} alt="FreshFade Studio" className="brand-icon" />
             <span>FreshFade Studio</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="confirmation-navbar" />
@@ -96,9 +85,6 @@ function Confirmation() {
               </Nav.Link>
               <Nav.Link as={Link} to="/services">
                 Services
-              </Nav.Link>
-              <Nav.Link as={Link} to="/booking">
-                Book
               </Nav.Link>
               <Nav.Link as={Link} to="/visit">
                 Location
@@ -121,12 +107,7 @@ function Confirmation() {
             <dl className="confirmation-list">
               {confirmationFields.map((field) => (
                 <div className="confirmation-row" key={field.key}>
-                  <dt>
-                    <span className="confirmation-symbol" aria-hidden="true">
-                      {field.symbol}
-                    </span>
-                    {field.label}
-                  </dt>
+                  <dt>{field.label}</dt>
                   <dd>{searchParams.get(field.key) || field.fallback}</dd>
                 </div>
               ))}

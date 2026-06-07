@@ -1,14 +1,15 @@
 import { Button, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Visit.css'
+import logo from '../assets/logo.png'
 
 function Visit() {
   return (
     <>
       <Navbar expand="lg" className="site-navbar visit-navbar">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="brand-mark">
-            <span className="brand-icon">FF</span>
+          <Navbar.Brand href="/" className="brand-mark">
+            <img src={logo} alt="FreshFade Studio" className="brand-icon" />
             <span>FreshFade Studio</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="visit-navbar" />
@@ -22,9 +23,6 @@ function Visit() {
               </Nav.Link>
               <Nav.Link as={Link} to="/gallery">
                 Gallery
-              </Nav.Link>
-              <Nav.Link as={Link} to="/booking">
-                Book
               </Nav.Link>
               <Nav.Link as={Link} to="/visit" active>
                 Location
@@ -46,32 +44,36 @@ function Visit() {
           </div>
 
           <Row className="align-items-center g-5 visit-content">
-            <Col lg={5}>
+            <Col lg={4}>
               <div className="visit-info">
                 <section>
                   <h2>Address</h2>
-                  <p>123 Barber Street</p>
-                  <p>Ottawa, ON K1N 1A1</p>
+                  <p>5065 Ch. Queen Mary</p>
+                  <p>Montréal, QC H3W 1X4</p>
                 </section>
 
                 <section>
                   <h2>Phone</h2>
-                  <p>(613) 555-0198</p>
+                  <p>(514) 430-2752</p>
                 </section>
 
                 <section>
                   <h2>Hours</h2>
-                  <p>Monday to Friday: 9:00 AM - 7:00 PM</p>
+                  <p>Monday to Friday: 9:00 AM - 5:00 PM</p>
                   <p>Saturday: 10:00 AM - 5:00 PM</p>
                   <p>Sunday: Closed</p>
                 </section>
-
-                <Button className="btn-book visit-call">Call Us</Button>
               </div>
             </Col>
-            <Col lg={7}>
+            <Col lg={8}>
               <div className="visit-map">
-                <span>Map Placeholder</span>
+                <iframe
+                  title="FreshFade Studio location"
+                  src="https://www.google.com/maps?q=Faded+Studio+Barbershop&output=embed"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
             </Col>
           </Row>

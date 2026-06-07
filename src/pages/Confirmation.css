@@ -89,20 +89,6 @@
   text-align: right;
 }
 
-.confirmation-symbol {
-  align-items: center;
-  background: rgba(47, 117, 181, 0.12);
-  border: 1px solid rgba(47, 117, 181, 0.28);
-  border-radius: 50%;
-  color: var(--fresh-blue);
-  display: inline-flex;
-  font-size: 12px;
-  font-weight: 800;
-  height: 28px;
-  justify-content: center;
-  width: 28px;
-}
-
 .confirmation-home {
   min-height: 50px;
   width: 100%;
@@ -124,7 +110,6 @@
   }
 
   .confirmation-row dd {
-    padding-left: 38px;
     text-align: left;
   }
 }

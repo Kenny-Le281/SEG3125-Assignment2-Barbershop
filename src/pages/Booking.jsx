@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Button, Col, Container, Form, Nav, Navbar, Row } from 'react-bootstrap'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import './Booking.css'
+import logo from '../assets/logo.png'
 
 const services = [
   { name: 'Signature Cut', price: '$35' },
@@ -127,8 +128,8 @@ function Booking() {
     <>
       <Navbar expand="lg" className="site-navbar booking-navbar">
         <Container>
-          <Navbar.Brand as={Link} to="/" className="brand-mark">
-            <span className="brand-icon">FF</span>
+          <Navbar.Brand href="/" className="brand-mark">
+            <img src={logo} alt="FreshFade Studio" className="brand-icon" />
             <span>FreshFade Studio</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="booking-navbar" />

@@ -64,7 +64,17 @@
 }
 
 .full-service-card .service-icon {
+  align-items: center;
+  border: 2px solid var(--fresh-blue);
+  border-radius: 50%;
+  color: var(--fresh-blue);
+  display: flex;
+  font-size: 22px;
+  font-weight: 800;
+  height: 58px;
+  justify-content: center;
   margin-bottom: 18px;
+  width: 58px;
 }
 
 .full-service-card .card-title {

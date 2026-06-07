@@ -1,22 +1,45 @@
 import { Button, Card, Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import './Home.css'
+import logo from '../assets/logo.png'
+import barbershopImage from '../assets/barbershop.png'
+import midTaper from '../assets/midTaper.jpg'
+import lowFade from '../assets/lowFade.jpg'
+import kidsCut from '../assets/kidsCut.jpg'
 
 const services = [
   {
     name: 'Signature Cut',
     time: '45 min',
     price: '$35',
+    icon: '1',
   },
   {
     name: 'Fade & Lineup',
     time: '50 min',
     price: '$42',
+    icon: '2',
   },
   {
     name: 'Beard Trim',
     time: '25 min',
     price: '$20',
+    icon: '3',
+  },
+]
+
+const galleryItems = [
+  { 
+    title: 'Mid Taper', 
+    image: midTaper, 
+  },
+  { 
+    title: 'Low Fade', 
+    image: lowFade,
+  },
+  { 
+    title: 'Kids Cut', 
+    image: kidsCut
   },
 ]
 
@@ -26,7 +49,7 @@ function Home() {
       <Navbar expand="lg" className="site-navbar">
         <Container>
           <Navbar.Brand href="/" className="brand-mark">
-            <span className="brand-icon">FF</span>
+            <img src={logo} alt="FreshFade Studio" className="brand-icon" />
             <span>FreshFade Studio</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="home-navbar" />
@@ -51,11 +74,10 @@ function Home() {
           <Container>
             <Row className="align-items-center g-5">
               <Col lg={6} className="text-lg-start">
-                <p className="eyebrow">Modern barbershop</p>
+                <p className="eyebrow">FreshFade Studio</p>
                 <h1 className="hero-title">Clean cuts, sharp fades, easy booking.</h1>
                 <p className="hero-text">
-                  FreshFade Studio keeps appointments simple with focused services,
-                  reliable timing, and a clean studio experience.
+                  FreshFade Studio delivers high-quality cuts for every age and style.
                 </p>
                 <div className="hero-actions">
                   <Button as={Link} to="/services" className="btn-book btn-lg">
@@ -68,9 +90,7 @@ function Home() {
               </Col>
               <Col lg={6}>
                 <div className="hero-image-wrap">
-                  <div className="hero-image" role="img" aria-label="FreshFade Studio barber chair">
-                    Barbershop Image
-                  </div>
+                  <img src={barbershopImage} alt="Inside FreshFade Studio" className="hero-image"/>
                 </div>
               </Col>
             </Row>
@@ -90,7 +110,7 @@ function Home() {
                 <Col md={6} lg={4} key={service.name}>
                   <Card className="service-card h-100">
                     <Card.Body>
-                      <div className="service-icon" aria-hidden="true" />
+                      <div className="service-icon" aria-hidden="true">{service.icon}</div>
                       <Card.Title>{service.name}</Card.Title>
                       <Card.Text>{service.time}</Card.Text>
                       <p className="service-price">{service.price}</p>
@@ -117,13 +137,17 @@ function Home() {
               <p>Fresh fades, classic cuts, and clean lineups.</p>
             </div>
             <Row className="g-4">
-              {['Classic taper', 'Low fade', 'Kids cut'].map((title) => (
-                <Col md={4} key={title}>
+              {galleryItems.map((item) => (
+                <Col md={4} key={item.title}>
                   <Link to="/gallery" className="gallery-card-link">
                     <div className="gallery-card">
-                    <div className="gallery-placeholder" />
-                    <h3>{title}</h3>
-                    <p>FreshFade finish</p>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="gallery-image"
+                      />
+                      <h3>{item.title}</h3>
+                      <p>FreshFade finish</p>
                     </div>
                   </Link>
                 </Col>
@@ -141,12 +165,28 @@ function Home() {
               <Col lg={5} className="text-lg-start">
                 <p className="eyebrow">Visit Us</p>
                 <h2>Drop by the studio</h2>
-                <p className="visit-copy">123 Barber Street, Ottawa, ON</p>
-                <p className="visit-copy">Mon to Fri, 9:00 AM - 7:00 PM</p>
-                <Button className="btn-book mt-3">Call Us</Button>
+                <h3 className="visit-label">Address</h3>
+                <p className="visit-copy">5065 Ch. Queen Mary</p>
+                <p className="visit-copy">Montréal, QC H3W 1X4</p>
+
+                <h3 className="visit-label">Phone</h3>
+                <p className="visit-copy">(514) 430-2752</p>
+
+                <h3 className="visit-label">Hours</h3>
+                <p className="visit-copy">Monday to Friday: 9:00 AM - 5:00 PM</p>
+                <p className="visit-copy">Saturday: 10:00 AM - 5:00 PM</p>
+                <p className="visit-copy">Sunday: Closed</p>
               </Col>
               <Col lg={7}>
-                <div className="map-placeholder">Map Placeholder</div>
+                <div className="visit-map">
+                  <iframe
+                    title="FreshFade Studio location"
+                    src="https://www.google.com/maps?q=Faded+Studio+Barbershop&output=embed"
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
+                </div>
               </Col>
             </Row>
           </Container>
