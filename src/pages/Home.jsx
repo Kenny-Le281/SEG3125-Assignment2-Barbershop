@@ -6,6 +6,7 @@ import barbershopImage from '../assets/barbershop.png'
 import midTaper from '../assets/midTaper.jpg'
 import lowFade from '../assets/lowFade.jpg'
 import kidsCut from '../assets/kidsCut.jpg'
+import designerImage from '../assets/profile-headshot.jpg'
 
 const services = [
   {
@@ -159,34 +160,29 @@ function Home() {
           </Container>
         </section>
 
-        <section className="visit-section" id="visit">
+        <section className="designer-section" id="designer">
           <Container>
-            <Row className="align-items-center g-4">
-              <Col lg={5} className="text-lg-start">
-                <p className="eyebrow">Visit Us</p>
-                <h2>Drop by the studio</h2>
-                <h3 className="visit-label">Address</h3>
-                <p className="visit-copy">5065 Ch. Queen Mary</p>
-                <p className="visit-copy">Montréal, QC H3W 1X4</p>
-
-                <h3 className="visit-label">Phone</h3>
-                <p className="visit-copy">(514) 430-2752</p>
-
-                <h3 className="visit-label">Hours</h3>
-                <p className="visit-copy">Monday to Friday: 9:00 AM - 5:00 PM</p>
-                <p className="visit-copy">Saturday: 10:00 AM - 5:00 PM</p>
-                <p className="visit-copy">Sunday: Closed</p>
-              </Col>
-              <Col lg={7}>
-                <div className="visit-map">
-                  <iframe
-                    title="FreshFade Studio location"
-                    src="https://www.google.com/maps?q=Faded+Studio+Barbershop&output=embed"
-                    loading="lazy"
-                    allowFullScreen
-                    referrerPolicy="no-referrer-when-downgrade"
+            <Row className="align-items-center g-5">
+              <Col lg={5}>
+                <div className="designer-image-wrap">
+                  <img
+                    src={designerImage}
+                    alt="Kenny Le, the site designer"
+                    className="designer-image"
                   />
                 </div>
+              </Col>
+              <Col lg={7} className="designer-copy text-lg-start">
+                <p className="eyebrow">Designed by Kenny Le</p>
+                <h2>Meet the site designer</h2>
+                <p>
+                  Hi I'm Kenny, and I'm a UI design student passionate about building clean,
+                  accessible, and welcoming digital experiences.
+                </p>
+                <p>
+                  FreshFade Studio was designed to make discovering services and
+                  booking an appointment simple for every customer.
+                </p>
               </Col>
             </Row>
           </Container>
